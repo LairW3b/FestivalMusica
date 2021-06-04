@@ -1,0 +1,22 @@
+//gulpjs.com
+nodejs require y exports 
+
+series permite ejecutar multiples tareas
+
+##### apuntes introducctorios a gulp ######
+function css(done) {
+    console.log('Hola Mundo en Gulp');
+
+    done();
+}
+
+function javascript( done ) {
+    console.log('compilando Javascrit');
+
+    done();
+}
+
+exports.css = css;
+
+exports.default = series( css, javascript); /* ejecuta las tareas en el orden que le damos */
+/* tambien se puede usar parrallel */

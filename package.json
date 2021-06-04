@@ -1,0 +1,29 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Gulp y sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LairW3b/FestivalMusica.git"
+  },
+  "keywords": [
+    "Sass",
+    "Gulp",
+    "Web",
+    "Desing"
+  ],
+  "author": "Lair W3b",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LairW3b/FestivalMusica/issues"
+  },
+  "homepage": "https://github.com/LairW3b/FestivalMusica#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
