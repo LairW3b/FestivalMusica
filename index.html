@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor contenido-header">
+            <h1>Rock & EDM festival</h1>
+
+            <nav class="navegacion-principal">
+                <a href="#">Line UP</a>
+                <a href="#">Galeria</a>
+                <a href="#">Boletos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="video">
+        <div class="overley">
+            <div class="contenedor contenido__video">
+                <h2>
+                    Rock & EDM festival
+                    <span>Julio 2021, Guadalajara, México</span>
+                </h2>
+            </div>
+        </div>
+        <video  controls autoplay muted loop>
+            <source src="video/concierto.mp4" type="video/mp4">
+            <source src="video/concierto.ogg" type="video/ogg">
+             <source src="video/concierto.webm" type="video/webm">
+        </video>
+        <!-- controls: muestra los controles de video
+                autoplay: inicia el video de forma automatica exepto en chrome ahí es necesario usar muted
+                muted: mutea el video.
+                loop: repite el video.
+          -->
+    </div>
+    <div class="sobre-festival  contenedor">
+        <div class="img">
+            <img src="src/img/imagen_vocalista.jpg" alt="Hombre cantando">
+        </div>
+        <div class="contenido-festival">
+             <h2>Rock & EDM Festival</h2>
+             <p class="fecha">Julio 2021, Guadalajara, México</p>
+             <p class="texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente tenetur quos aliquam doloribus voluptatum commodi minus nam, voluptates fugit fugiat reiciendis voluptatibus? Odit sapiente exercitationem, quos in laboriosam itaque sint!</p>
+        </div>
+    </div>
+</body>
+</html>

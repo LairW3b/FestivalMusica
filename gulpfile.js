@@ -1,8 +1,13 @@
-const { series, src, dest} = require('gulp');
+const { series, src, dest, watch} = require('gulp');
 const sass = require('gulp-sass');
+const imagemin = require('gulp-imagemin');
+const notify = require('gulp-notify');
+const webp = require('gulp-webp')
 
+const paths = {
+    imagenes: 'src/img/**/*',
+}
 //Funcion que compila SASS
-
 function css() {
     return src('src/scss/app.scss')
         .pipe(sass({
@@ -11,4 +16,30 @@ function css() {
         .pipe(dest('./build/css'))
 }
 
+function imagenes() {
+    return src(paths.imagenes)/* buscar en todos los contenidos */
+        .pipe( imagemin())
+        .pipe( dest( './build/img' ) )
+        .pipe(notify({ message: 'Imagen Minificada'}))
+
+}
+
+function versionWebp() {
+    return src(paths.imagenes)
+        .pipe(webp())
+        .pipe(dest('./build/img'))
+        .pipe( notify({message: 'Version webP lista'}));
+}
+
+function watchArchivos() {
+    watch('src/scss/**/*.scss', css);// * = a la carpeta actual - ** = a todos los archivos y carpetas con esa extensión
+}
+
+/* requiero watch creo una funcion y en la funcion watch le paso como primer parametro la url y como segundo la funcion donde estoy compilando. */
+
+//siempre hay que crear los exports
 exports.css = css;
+exports.imagenes = imagenes;
+exports.watchArchivos = watchArchivos;
+
+exports.default = series(css, imagenes, versionWebp, watchArchivos);

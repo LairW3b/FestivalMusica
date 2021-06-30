@@ -20,3 +20,5 @@ exports.css = css;
 
 exports.default = series( css, javascript); /* ejecuta las tareas en el orden que le damos */
 /* tambien se puede usar parrallel */
+
+Compilar gulp

@@ -1,0 +1,35 @@
+//Micxin es un grupo de propiedades que puedes reutilizar
+/* @mixin nuevoMixin($transform, $size) {
+    font-size: $size;
+    text-transform: $transform;
+} */
+/* Podemos tratar los mixins como funciones y pasar parametros permitindo nos 
+modificarlos con la propiedad que vayamos a usar */
+
+
+/*agragando @content en un mixin podemos pasar todos los valores que queramos escritos en el archivo.scss que tengamos  */
+@mixin telefono {
+    @media(min-width: $telefono) {
+        @content;
+               
+    }
+}
+
+@mixin  tablet {
+   @media (min-width: $tablet) {
+       @content;
+   }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+    
+}
+
+@mixin grid ($columnas, $espaciado){
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
