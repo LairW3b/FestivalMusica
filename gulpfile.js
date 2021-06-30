@@ -6,10 +6,11 @@ const webp = require('gulp-webp')
 
 const paths = {
     imagenes: 'src/img/**/*',
+    scss: 'src/scss/**/*.scss'
 }
 //Funcion que compila SASS
 function css() {
-    return src('src/scss/app.scss')
+    return src(paths.scss)
         .pipe(sass({
             outputStyle: 'expanded'//compressed->codigo minificado
         }))    
@@ -32,7 +33,7 @@ function versionWebp() {
 }
 
 function watchArchivos() {
-    watch('src/scss/**/*.scss', css);// * = a la carpeta actual - ** = a todos los archivos y carpetas con esa extensión
+    watch(paths.scss, css);// * = a la carpeta actual - ** = a todos los archivos y carpetas con esa extensión
 }
 
 /* requiero watch creo una funcion y en la funcion watch le paso como primer parametro la url y como segundo la funcion donde estoy compilando. */
@@ -42,4 +43,4 @@ exports.css = css;
 exports.imagenes = imagenes;
 exports.watchArchivos = watchArchivos;
 
-exports.default = series(css, imagenes, versionWebp, watchArchivos);
+exports.default = series(css, watchArchivos);
